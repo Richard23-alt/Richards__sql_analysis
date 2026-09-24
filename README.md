@@ -141,5 +141,9 @@ ORDER BY
 Networth_rank ASC;
 ```
 
+One row per bank branch. It tells us how big each branch is (staff, customers, money) and how the branches rank.
+
+![Branch chart](branch_balance_chart.png)
+
 # What I learnt
 # Conclusion
