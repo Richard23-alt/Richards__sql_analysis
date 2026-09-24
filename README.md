@@ -143,7 +143,56 @@ Networth_rank ASC;
 
 One row per bank branch. It tells us how big each branch is (staff, customers, money) and how the branches rank.
 
-![Branch chart](branch_balance_chart.png)
+![Branch chart](https://github.com/Richard23-alt/Richards__sql_analysis/blob/488e40dc21e21bac381f1e22dad27ea768ccd4e3/Custom%20Office%20Templates/branch_balance_chart.png)
+
+## Findings
+
+1. **Branches come in four sizes.** The chart shows four clear groups, with nothing in between:
+
+   | Size group | Branches | Average staff | Share of all money |
+   |---|---|---|---|
+   | About 650 customers | 55 | 12 | 37% |
+   | About 1,250 customers | 21 | 24 | 28% |
+   | About 1,900 customers | 15 | 36 | 30% |
+   | About 2,500 customers | 2 | 49 | 5% |
+
+   the four groups above represents its size 55 large group branches, 21 medium, 15 large and 2 Extra large groups marking a total of
+   93 branches
+   
+### Facts
+- 15 cities, 93 branches
+- 1,800 employees and 95,000 active customers in total
+- About 4.35 billion held in accounts across all branches
+
+Top 5 Ranking cities by total balance:
+
+| City | Branches | Customers | Total balance |
+|---|---|---|---|
+| Bhopal | 7 | 11,220 | 512M |
+| Kolkata | 7 | 9,374 | 421M |
+| Kochi | 8 | 8,866 | 408M |
+| Pune | 6 | 7,607 | 344M |
+| Jaipur | 7 | 7,024 | 328M |
+
+
+## Insight
+Due to multiple repeating name the branches was grouped into four however all four are operational in 15 cities but out of 15 about 5 stood out
+Bhopal, Kolkata, Kochi, Pune, Jaipur.
+
+
+Every customser keeps almost the same amount of money which is about 45,700 each. meaning branches with more customser has more money, other 
+major cities like Chennai,Hyderabad, Ahmedabad puna, and kolkata have steady busy branches looking after about 1,950 customers with effective
+empolyees on ground however on proper examination on average one worker looks after about 53 customers But at Chennai 1 worker looks after
+127 customers
+
+### ways to improve operations :
+**Cut Extra Costs**
+
+Some smaller local branches have up to 20 employees but serve fewer than 650 customers. we should look into downsizing those teams to save up cost since most bigger branches run smoothly with up to 6 to 8 employees. some of these teams can be transfered to hyderabad branch 4 
+which has been recorded to have only one employee 
+
+
+
 
 # What I learnt
 # Conclusion
