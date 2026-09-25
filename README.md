@@ -195,7 +195,60 @@ which has been recorded to have only one employee
 ### 2 compare Which customers have sigificant account balance 
 relatively little transactions activity. to achieve this
 i combine different tables containing each customer account_id,name,transactions etc..
-![Customer balance chart](customer_balance_chart.png)
+![Customer balance chart](https://github.com/Richard23-alt/Richards__sql_analysis/blob/8f4c956c34690ab5aa05b4a84b882f042aaeef12/Custom%20Office%20Templates/customer_balance_chart.png)
+
+## What is in this SQL query
+``` sql
+SELECT
+C.NAME,B.account_id,
+TO_CHAR(amount,'FM$999,999,999.99') AS Formated_spent,
+TO_CHAR(balance,'FM$999,999,999.99') AS Formated_Balance,
+CASE
+WHEN B.balance > 49000 THEN 'High_account_balance'
+END AS Account_activity
+
+FROM
+public.customers  AS C
+LEFT JOIN bank_account as B
+ON B.customer_id=C.customer_id
+LEFT JOIN transactions AS T 
+ON B.account_id=T.account_id
+WHERE
+B.balance >49000 AND
+T.amount < 1000
+LIMIT
+700
+```
+
+700 rows, 5 columns, no missing values.
+
+| Column | Meaning |
+|---|---|
+| `name` | Customer name |
+| `account_id` | Account number |
+| `formated_spent` | Amount spent, stored as text (e.g. `$899.8`) |
+| `formated_balance` | Account balance, stored as text (e.g. `$112,300.82`) |
+| `account_activity` | Account label. Every single row says `High_account_balance` |
+
+## Insights
+
+1. Everyone is a high-balance customer The lowest balance is still about $49K, and the label agrees.
+2. Most balances sit between $50K and $110K, with a long tail of a few very rich accounts (the chart leans to the left).
+3. Customers spend very little compared with what they hold about 0.6% of their balance.
+4. Spending has no link to balance. Rich accounts do not spend more than smaller ones (the link is almost zero, 0.01).
+5. Spending is spread evenly from $50 to $1,000, with 72 customers spending over $900.
+
+### Recommendation
+- under observation i noticed 10 account IDs appear twice (20 rows). Each pair has the same name and balance but different `spent` amounts. this suggests individual have multiple accounts which lead may to fradulent transcation or application for multiple loans,
+restriction to two accounts or creation of mutiple accounts for valid reasons should be followed up.
+
+### 3 identify patterns in fraudulent card activity and_ determine which customer and merchant categories are associated with the highest fraud exposure
+
+![Fraud list vs customers chart](fraud_vs_customer_chart.png)
+
+
+
+
 
 
 
