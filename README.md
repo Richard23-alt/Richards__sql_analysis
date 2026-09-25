@@ -244,7 +244,50 @@ restriction to two accounts or creation of mutiple accounts for valid reasons sh
 
 ### 3 identify patterns in fraudulent card activity and_ determine which customer and merchant categories are associated with the highest fraud exposure
 
-![Fraud list vs customers chart](fraud_vs_customer_chart.png)
+![Fraud list vs customers chart](https://github.com/Richard23-alt/Richards__sql_analysis/blob/8d140189388da52007ed215acaef3b1ad002555e/Custom%20Office%20Templates/fraud_vs_customer_chart.png)
+
+## What is in this SQL query
+```SQL
+SELECT 
+C.name,
+Cd.card_id,Ct.merchant_category,Ct.is_fraud,
+Ct.txn_date,Cd.card_type
+FROM
+public.Cards AS Cd 
+INNER JOIN public.Customers AS C
+ON C.customer_id=Cd.customer_id 
+INNER JOIN public.Card_transactions AS Ct
+ON Ct.card_id=Cd.card_id
+WHERE
+Ct.is_fraud= 1
+```
+
+700 rows, 5 columns, no missing values.
+
+| Column | Meaning |
+|---|---|
+| `name` | Account holder name |
+| `account_id` | Account number |
+| `formated_spent` | Amount spent, stored as text (e.g. `$741.53`) |
+| `formated_balance` | Account balance, stored as text (e.g. `$135,179.16`) |
+| `account_activity` | Account label. Every single row says `High_account_balance` |
+| `card_type`| type of card mostly used during this activity|
+
+### Insights
+
+1. The fraud list may look like the normal customer list how ever its the list of fraud accounts. Balances, spending and the label are all very similar. The blue and red bars in the chart follow the same shape.
+2. The two SQL query(one above and this current one)  share accounts. 61 account IDs appear in both this SQL and , with the same name and the same balance.
+3. I notced this fraud is most common among mutiple account holders
+
+### Recommendation
+same as documented in the pervious SQL.
+
+
+### 4. which loans have recieved the most payments and which loans still have a large outstanding balance
+
+![Loan repayment chart](loan_repaid_chart.png)
+
+
 
 
 
