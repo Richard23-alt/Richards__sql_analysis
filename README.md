@@ -285,7 +285,46 @@ same as documented in the pervious SQL.
 
 ### 4. which loans have recieved the most payments and which loans still have a large outstanding balance
 
-![Loan repayment chart](loan_repaid_chart.png)
+![Loan repayment chart](https://github.com/Richard23-alt/Richards__sql_analysis/blob/a9c7564fb05a32dbdb74394ba8d48a5e61823916/Custom%20Office%20Templates/loan_repaid_chart.png)
+
+## What is in this SQL query
+```SQL
+SELECT
+C.name,
+TO_CHAR(SUM(loan_amount),'FM$999,999,999.99') AS 
+Formated_loan_amt,
+TO_CHAR(SUM(amount_paid),'FM$999,999,999.99') AS Total_paid,
+COUNT(payment_date) AS Count_pay,
+L.term_months
+FROM 
+public.Customers AS C
+INNER JOIN public.loan AS L
+ON L.customer_id=C.customer_id
+INNER JOIN public.Loan_payments AS LP 
+ON LP.loan_id=L.loan_id
+GROUP BY 
+C.name,L.term_months
+```
+
+8,751 rows, 5 columns, no missing values.
+
+| Column | Meaning |
+|---|---|
+| `name` | Borrower name |
+| `formated_loan_amt` | Loan amount, stored as text (e.g. `$24,342,240.4`) |
+| `total_paid` | Total repaid so far, stored as text |
+| `count_pay` | Number of payments made (11 to 278) |
+| `term_months` | Loan length in months |
+
+## Insights
+
+1. Only about 2.5% of the loan money has been repaid. For half of all loans, less than 3% is repaid.
+2. Small loans are repaid faster. Loans under $1M are typically 36% repaid, while loans over $60M are typically only 1.6% repaid (see the chart).
+3. Every payment is about the same size (about $10K), whatever the loan size. That is why big loans move so slowly.
+4. Total paid depends on the number of payments made, not on the loan size .
+5. Loan length has no effect on loan size. A 12-month loan is about as big as a 240-month loan (every loan length averages between $28M and $29M).
+6.Big borrowers are not dominating. The top 10% of borrowers make up only 17% of the money lent.
+
 
 
 
