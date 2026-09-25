@@ -192,6 +192,11 @@ Some smaller local branches have up to 20 employees but serve fewer than 650 cus
 which has been recorded to have only one employee 
 
 
+### 2 compare Which customers have sigificant account balance 
+relatively little transactions activity. to achieve this
+i combine different tables containing each customer account_id,name,transactions etc..
+![Customer balance chart](customer_balance_chart.png)
+
 
 
 # What I learnt
