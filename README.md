@@ -192,7 +192,7 @@ Some smaller local branches have up to 20 employees but serve fewer than 650 cus
 which has been recorded to have only one employee 
 
 
-### 2 compare Which customers have sigificant account balance 
+### 2. compare Which customers have sigificant account balance 
 relatively little transactions activity. to achieve this
 i combine different tables containing each customer account_id,name,transactions etc..
 ![Customer balance chart](https://github.com/Richard23-alt/Richards__sql_analysis/blob/8f4c956c34690ab5aa05b4a84b882f042aaeef12/Custom%20Office%20Templates/customer_balance_chart.png)
@@ -242,7 +242,7 @@ LIMIT
 - under observation i noticed 10 account IDs appear twice (20 rows). Each pair has the same name and balance but different `spent` amounts. this suggests individual have multiple accounts which lead may to fradulent transcation or application for multiple loans,
 restriction to two accounts or creation of mutiple accounts for valid reasons should be followed up.
 
-### 3 identify patterns in fraudulent card activity and_ determine which customer and merchant categories are associated with the highest fraud exposure
+### 3. identify patterns in fraudulent card activity and_ determine which customer and merchant categories are associated with the highest fraud exposure
 
 ![Fraud list vs customers chart](https://github.com/Richard23-alt/Richards__sql_analysis/blob/8d140189388da52007ed215acaef3b1ad002555e/Custom%20Office%20Templates/fraud_vs_customer_chart.png)
 
