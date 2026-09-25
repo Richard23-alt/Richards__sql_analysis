@@ -326,13 +326,26 @@ C.name,L.term_months
 6.Big borrowers are not dominating. The top 10% of borrowers make up only 17% of the money lent.
 
 
-
-
-
-
-
-
-
-
-# What I learnt
 # Conclusion
+The bank has 93 branches in 15 cities. Bigger branches simply have more customers, and each customer keeps about the same amount of
+money so bigger branches are not smarter, just busier.
+
+Those customers, and the accounts on fraud list, all belong to a rich,careful group of people(everyone has at least $49,000 saved
+and hardly anyone spends much of it). the biggest story is the loans. the bank lent out about $251 billon, but only about $6.2billon 
+has ever come back which is about $2.50 for every $100 lent. Small loans get paid off fine, Giant loans barely move, because every
+payment is about the same size no matter how big the loan is.
+
+So,in one sentence: the branches and customers look healthy and normal, but the loans look worrying cause most of the money lent out
+has not been paid back, and number of loans has mistakes due to this muitple account and must be properly checked before anyone trusts them. 
+
+
+
+
+
+
+
+
+
+
+
+
